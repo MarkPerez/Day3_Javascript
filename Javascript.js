@@ -5,14 +5,12 @@ event1.addEventListener('click', activate, false);
 function activate(){
 
     //create a new empty array
-    var items = [];
+    var items = ["This", "is", "an", "array"];
     
-    //populate array with user input
-    items[0] = document.getElementById("input1").value;
-    items[1] = document.getElementById("input2").value;
-    items[2] = document.getElementById("input3").value;
+    //add new item to array
+    items.push(document.getElementById("input1").value);
+    
+    //display array on HTML page
+    document.getElementById("demo").innerHTML = items + "<br>" + "The array length is: " + items.length;
 
-       
-    document.getElementById("demo").innerHTML = items;
-} 
-    
+}
