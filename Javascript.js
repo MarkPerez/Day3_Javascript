@@ -1,21 +1,30 @@
-//Event Listener for add to start button
+//Event Listener for check button
 var event1 = document.getElementById("button1");
 event1.addEventListener('click', activate, false);
 
 function activate(){
     
     //create a new array
-    var colours = ["Red", "Blue", "Green", "Yellow", "Brown", "Purple", "Pink", "Orange", "Black", "White"];
+    var countries = ["England", "France", "Italy", "Mexico", "Poland", "Russia", "China", "Greece", "Egypt", "India"];
     
     //create array length variable
-    var arrayLength = colours.length;
+    var arrayLength = countries.length;
+        
+    var userInput = document.getElementById("input1").value;
+    
+    //create indexof() function
+    var searchCountry = countries.indexOf(userInput);
     
     var text = "";
     
-    //create loop for arrays
-    for (i = 0; i < arrayLength; i++){
-        text+= "<br>" + colours[i];
-        }
+    //Create message depending on whether country was in array
+    if (searchCountry == -1) {
+        text = "This country is not present in the array.";
+    }
+    
+    else {
+        text = "This country is present at position " + (searchCountry + 1) + " in the array.";
+    }
     
     document.getElementById("demo").innerHTML = text;
     
