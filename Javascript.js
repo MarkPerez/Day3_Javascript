@@ -1,26 +1,22 @@
 //Event Listener for add to start button
 var event1 = document.getElementById("button1");
-event1.addEventListener('click', add, false);
-
-//Event Listener for add to start button
-var event2 = document.getElementById("button2");
-event2.addEventListener('click', activate, false);
-
-//create a new empty array
-var colours = ["Red", "Blue", "Green", "Yellow"];
-
-
-function add(){
-    //add to an array at a specific index point
-    var userInputColour = document.getElementById("input1").value;
-    var userInputNumber = parseInt(document.getElementById("input2").value); 
-    colours.splice(userInputNumber - 1, 0, userInputColour);
-    
-}
+event1.addEventListener('click', activate, false);
 
 function activate(){
     
-    //display array on HTML page
-    document.getElementById("demo").innerHTML = colours;
+    //create a new array
+    var colours = ["Red", "Blue", "Green", "Yellow", "Brown", "Purple", "Pink", "Orange", "Black", "White"];
+    
+    //create array length variable
+    var arrayLength = colours.length;
+    
+    var text = "";
+    
+    //create loop for arrays
+    for (i = 0; i < arrayLength; i++){
+        text+= "<br>" + colours[i];
+        }
+    
+    document.getElementById("demo").innerHTML = text;
     
 }
